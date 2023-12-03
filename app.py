@@ -3,7 +3,7 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-@app.route('/webhook', methods=['POST'])
+@app.route('/invoice', methods=['POST'])
 def webhook_receiver():
     data = request.json
     print(data)
