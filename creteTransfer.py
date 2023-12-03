@@ -1,6 +1,11 @@
 import starkbank
+import os
 
-from key import private_key_content
+
+
+private_key_content = os.environ.get('private_key_content')
+if private_key_content is None:
+    from key import private_key_content
 
 starkbank.user = starkbank.Project(
     environment="sandbox",
