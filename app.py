@@ -6,9 +6,12 @@ app = Flask(__name__)
 @app.route('/invoice', methods=['POST'])
 def webhook_receiver():
     data = request.json
-    print(data)
-    print("----")
-    print(data["event"]["log"]["type"])
+    
+    if data["event"]["log"]["type"] == "credited":
+        print("create transfer")
+        print("----")
+        print(data)
+
     return '', 200
 
 if __name__ == "__main__":
