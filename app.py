@@ -7,6 +7,8 @@ app = Flask(__name__)
 def webhook_receiver():
     data = request.json
     print(data)
+    print("----")
+    print(data["event"]["log"]["type"])
     return '', 200
 
 if __name__ == "__main__":
