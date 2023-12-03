@@ -24,7 +24,15 @@ def webhook_receiver():
         #account_type= "payment"
         #tax_id= "20.018.183/0001-80"
         #name= "Stark Bank S.A."
-        create_transfer(amount,bank_code, branch_code, account_number, account_type, tax_id, name, tags)
+        #create_transfer(amount,bank_code, branch_code, account_number, account_type, tax_id, name, tags)
+        print(amount)
+        print(bank_code)
+        print(branch_code)
+        print(account_number)
+        print(account_type)
+        print(tax_id)
+        print(name)
+        print(tags)
         print("----")
         print(data)
 
