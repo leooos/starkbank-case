@@ -1,12 +1,6 @@
 import starkbank
 
-private_key_content = """
------BEGIN EC PRIVATE KEY-----
-MHQCAQEEINopt+q6XkVIJ8Lnad56veOSNr9Uj+4kOzyZgEXuoNVtoAcGBSuBBAAK
-oUQDQgAE9SjYJErMoUTHietJFWjiGsC+wFveMxW2uE89G7WiLrUJO9R+nHeE1Yj6
-mWKb/MpFKlzYbdtwLh4wzkNLxlnGtQ==
------END EC PRIVATE KEY-----
-"""
+from key import private_key_content
 
 starkbank.user = starkbank.Project(
     environment="sandbox",
