@@ -14,19 +14,13 @@ def webhook_receiver():
     if data["event"]["log"]["type"] == "credited":
         print("create transfer")
         amount = data["event"]["log"]["invoice"]["amount"]
-        bank_code= "00655522"
-        branch_code= "0001"
-        account_number= "10000-0"
-        account_type= "salary"
-        tax_id= "38633192810"
-        name= "Domonique Whisenhunt"
-        tags= ["tests"]
-        #bank_code= "20018183"
-        #branch_code= "0001"
-        #account_number= "6341320293482496"
-        #account_type= "payment"
-        #tax_id= "20.018.183/0001-80"
-        #name= "Stark Bank S.A."
+        bank_code = "20018183"
+        branch_code = "0001"
+        account_number = "6341320293482496"
+        account_type = "payment"
+        tax_id = "20.018.183/0001-80"
+        name = "Stark Bank S.A."
+        tags = ["case"]
         create_transfer(amount,bank_code, branch_code, account_number, account_type, tax_id, name, tags)    
 
     return 'POST ok', 200
