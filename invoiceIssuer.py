@@ -6,6 +6,7 @@ import datetime
 
 from createPerson import create_person
 from createInvoice import create_invoice
+from apscheduler.schedulers.blocking import BlockingScheduler
 
 i=0
 def issue_invoices():
@@ -23,11 +24,16 @@ def testar():
     print("rodou as "+ str(datetime.datetime.now()))
     print(i)
           
-schedule.every(1).minutes.do(testar)
-testar()
-while i <= 8: # 8 iterações * 3 horas = 24 horas
-    schedule.run_pending()
-    time.sleep(60)  # Espera 1 hora (3600 segundos) antes de verificar novamente
-    i+=1
 
-print("Fim do período de 24 minutos.")
+sched = BlockingScheduler()
+testar()
+@sched.scheduled_job('interval', minutes=1)
+def timed_job():
+    i=+1
+    testar()
+
+@sched.scheduled_job('cron', day_of_week='mon-fri', hour=17)
+def scheduled_job():
+    print('This job is run every weekday at 5pm.')
+
+sched.start()
