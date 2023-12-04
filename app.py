@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/invoice', methods=['POST'])
 def webhook_receiver():
     data = request.json
-    if data["event"]==false:
+    if "event" not in data:
         return 'error', 400
     print(data["event"]["log"]["type"])
 
