@@ -1,7 +1,7 @@
 import random
 import starkbank
-import time
-import schedule
+#import time
+#import schedule
 import datetime
 
 from createPerson import create_person
