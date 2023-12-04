@@ -1,2 +1,2 @@
 web: python app.py --bind :$PORT
-worker: python invoiceIssuer.py
+clock: python meu_script.py
