@@ -1,8 +1,6 @@
 import starkbank
 import os
 
-
-
 private_key_content = os.environ.get('private_key_content')
 if private_key_content is None:
     from key import private_key_content
