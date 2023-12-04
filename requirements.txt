@@ -3,5 +3,5 @@ Werkzeug==2.0.1
 Requests==2.31.0
 starkbank==2.22.0
 apscheduler==3.10.4
-faker==2.8.2
+faker==20.1.0
 cpf_generator==2.1.4
